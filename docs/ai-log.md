@@ -36,6 +36,6 @@
 
 GitHub Actions пройшли на `ubuntu-latest`, `windows-latest` і `macos-latest`. Створено три артефакти.
 
-Посилання на PR: (додам пізніше)
+Посилання на PR: https://github.com/Markiian1414/apks-lab1/pull/1
 
-Посилання на запуск Actions: (додам пізніше)
+Посилання на запуск Actions:
