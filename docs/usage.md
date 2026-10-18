@@ -21,28 +21,21 @@ git --version
 
 1. Відкрий корінь Git-репозиторію у VS Code.
 2. Відкрий GitHub Copilot Chat.
-3. Перемкни Copilot Chat у режим **Agent**.
-4. Надішли повідомлення:
+3. Перемкни Copilot Chat у режим **Local**.
+4. Вибери агента `build-engineer`.
+5. Виконай команду `/init`.
 
-   ```text
-   #file:.github/prompts/init.prompt.md виконай цей сценарій
-   ```
+Після введення `/init` у меню може бути також вбудована команда **«Initialize Copilot instructions for this repository»**. Вибери саме команду з описом **«Послідовно виконати повний сценарій…»**.
 
-Вбудована команда `/init` у Copilot перехоплює назву `init`. Тому оркестратор потрібно запускати не як слеш-команду, а через посилання на prompt-файл у форматі `#file:.github/prompts/init.prompt.md`.
+Якщо в чаті вибрано режим Copilot замість Local, prompt-команди не показуються. Запасний варіант запуску: `Ctrl+Shift+P` → **Chat: Run Prompt…** → `init`.
 
-Окремі команди запускаються так само, через посилання на відповідний файл:
+Окремі команди запускаються так само:
 
-- `#file:.github/prompts/git-init.prompt.md`;
-- `#file:.github/prompts/create-project.prompt.md`;
-- `#file:.github/prompts/create-build.prompt.md`;
-- `#file:.github/prompts/create-actions.prompt.md`;
-- `#file:.github/prompts/check.prompt.md`.
-
-Для кожної команди додай у повідомленні дію, яку потрібно виконати, наприклад:
-
-```text
-#file:.github/prompts/check.prompt.md виконай перевірку
-```
+- `/git-init`;
+- `/create-project`;
+- `/create-build`;
+- `/create-actions`;
+- `/check`.
 
 ## 3. Очікуваний результат запуску
 
@@ -189,11 +182,11 @@ npm -v
 Переконайся, що:
 
 - відкрито саме корінь репозиторію;
-- GitHub Copilot Chat працює в режимі **Agent**;
-- шлях у посиланні `#file:` вказано правильно;
-- файл prompt існує за вказаним шляхом.
+- GitHub Copilot Chat працює в режимі **Local**;
+- вибрано агента `build-engineer`;
+- потрібний prompt-файл існує.
 
-Для оркестратора використовуй `#file:.github/prompts/init.prompt.md`, а не `/init`.
+Якщо prompt-команди не показуються, переконайся, що не вибрано режим Copilot замість Local. Запусти prompt через `Ctrl+Shift+P` → **Chat: Run Prompt…** → `init`. Після `/init` обирай команду з описом **«Послідовно виконати повний сценарій…»**, а не вбудовану команду **«Initialize Copilot instructions for this repository»**.
 
 ### `dist/hello` не виконується на Linux/macOS
 
