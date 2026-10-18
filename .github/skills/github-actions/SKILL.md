@@ -29,6 +29,7 @@ Skill очікує, що в корені проєкту вже існують:
 - крок `actions/setup-node` із Node LTS;
 - запуск `bash ci.sh` на Linux і macOS;
 - запуск `ci.bat` на Windows;
+- Windows-крок має містити `shell: cmd` перед `run: ci.bat`;
 - умови запуску скриптів через `runner.os`;
 - крок `actions/upload-artifact` із каталогом `dist/`;
 - ім’я артефакту має містити операційну систему, наприклад `${{ matrix.os }}`;
@@ -58,10 +59,11 @@ Workflow має містити лише orchestration CI. Уся логіка с
 3. є одна job із matrix, що містить `ubuntu-latest`, `windows-latest` і `macos-latest`;
 4. присутні `actions/checkout`, `actions/setup-node` і `actions/upload-artifact`;
 5. Linux/macOS запускають `bash ci.sh`, а Windows запускає `ci.bat` через умову `runner.os`;
-6. workflow завантажує каталог `dist/`, а ім’я артефакту містить ОС;
-7. у workflow немає рядків або команд із `npm`;
-8. у workflow немає секретів, токенів або зайвих дозволів;
-9. `ci.sh` і `ci.bat` існують перед запуском workflow.
+6. Windows-крок містить `shell: cmd` перед `run: ci.bat`;
+7. workflow завантажує каталог `dist/`, а ім’я артефакту містить ОС;
+8. у workflow немає рядків або команд із `npm`;
+9. у workflow немає секретів, токенів або зайвих дозволів;
+10. `ci.sh` і `ci.bat` існують перед запуском workflow.
 
 ## Типовий сценарій помилки і реакція
 
