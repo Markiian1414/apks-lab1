@@ -63,3 +63,6 @@ ci.bat
 
 - [`docs/usage.md`](docs/usage.md) — повна інструкція, локальна перевірка та запуск зібраного проєкту.
 - [`docs/architecture.md`](docs/architecture.md) — архітектура агента та взаємодія його складових.
+
+
+
